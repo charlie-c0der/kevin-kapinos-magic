@@ -1,0 +1,790 @@
+<template>
+  <div class="home">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__background">
+        <div class="hero__particles"></div>
+      </div>
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <span class="hero__label">Chicago Mentalist & Psychological Entertainer</span>
+            <h1 class="hero__title">
+              The mind has no secrets.
+              <span class="accent">Only mysteries</span>
+              waiting to be revealed.
+            </h1>
+            <p class="hero__description">
+              Interactive mentalism and psychological entertainment that transcends 
+              the ordinary. Experience the impossible through the power of the mind.
+            </p>
+            <div class="hero__actions">
+              <router-link to="/contact" class="btn btn-primary">
+                Book Performance
+              </router-link>
+              <button class="btn btn-secondary" @click="scrollToExperience">
+                Discover More
+              </button>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="mind-visual">
+              <div class="brain-container">
+                <div class="brain-outline"></div>
+                <div class="neural-network">
+                  <div class="neuron" v-for="i in 12" :key="i"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Venue Credentials -->
+        <div class="hero__venues">
+          <span class="venues__label">Regular Performer At</span>
+          <div class="venues__list">
+            <div class="venue-item">
+              <div class="venue-logo">CML</div>
+              <span>Chicago Magic Lounge</span>
+            </div>
+            <div class="venue-item">
+              <div class="venue-logo">MC</div>
+              <span>The Magic Castle</span>
+            </div>
+            <div class="venue-item">
+              <div class="venue-logo">NW</div>
+              <span>Events Nationwide</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I Do Section -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">The Experience</span>
+          <h2>Mind reading isn't magic.<br/>It's psychology.</h2>
+          <p>Through years of studying human behavior, micro-expressions, and psychological 
+             principles, I create experiences that seem impossible but are grounded in reality.</p>
+        </div>
+        
+        <div class="experience__grid">
+          <div class="experience__card">
+            <div class="card-icon">🧠</div>
+            <h3>Psychological Entertainment</h3>
+            <p>Using principles of psychology, behavioral analysis, and intuition to create 
+               moments that blur the line between science and the impossible.</p>
+          </div>
+          <div class="experience__card">
+            <div class="card-icon">👁️</div>
+            <h3>Mind Reading</h3>
+            <p>Demonstrations of apparent telepathy and thought reading that leave audiences 
+               questioning the limits of human perception and connection.</p>
+          </div>
+          <div class="experience__card">
+            <div class="card-icon">🎯</div>
+            <h3>Psychological Influence</h3>
+            <p>Explorations of suggestion, influence, and the subconscious mind that reveal 
+               how our thoughts and choices can be subtly guided.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance Types -->
+    <section class="performances section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Performance Formats</span>
+          <h2>Tailored to your event</h2>
+        </div>
+        
+        <div class="performance-types">
+          <div class="performance-card">
+            <div class="performance-number">01</div>
+            <h3>Corporate Events</h3>
+            <p class="performance-subtitle">Team Building & Entertainment</p>
+            <ul class="performance-features">
+              <li>Interactive demonstrations that engage entire groups</li>
+              <li>Customizable content to reinforce company messages</li>
+              <li>Perfect for holiday parties, conferences, and retreats</li>
+              <li>Professional presentation suitable for executive audiences</li>
+            </ul>
+            <div class="performance-specs">
+              <div class="spec">
+                <span class="spec-label">Duration</span>
+                <span class="spec-value">30-60 minutes</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Audience</span>
+                <span class="spec-value">20-500 guests</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="performance-card">
+            <div class="performance-number">02</div>
+            <h3>Private Celebrations</h3>
+            <p class="performance-subtitle">Weddings & Special Events</p>
+            <ul class="performance-features">
+              <li>Intimate mind reading experiences for guests</li>
+              <li>Memorable moments that become conversation starters</li>
+              <li>Adaptable to cocktail hours, receptions, or dinner parties</li>
+              <li>Creates personal connections with your guests</li>
+            </ul>
+            <div class="performance-specs">
+              <div class="spec">
+                <span class="spec-label">Duration</span>
+                <span class="spec-value">2-4 hours</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Audience</span>
+                <span class="spec-value">Intimate groups</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section">
+      <div class="container">
+        <div class="testimonials__content">
+          <div class="testimonial-main">
+            <blockquote>
+              "Kevin's performance was unlike anything we'd ever experienced. 
+               He didn't just read our minds - he made us question everything 
+               we thought we knew about the power of human intuition."
+            </blockquote>
+            <cite>
+              — Sarah Chen<br>
+              <span>Event Director, Chicago Corporate Events</span>
+            </cite>
+          </div>
+          
+          <div class="testimonial-grid">
+            <div class="testimonial-mini">
+              <p>"Absolutely mind-blowing. Our guests are still talking about it months later."</p>
+              <cite>— Michael R., Wedding Reception</cite>
+            </div>
+            <div class="testimonial-mini">
+              <p>"Professional, engaging, and genuinely impossible. Highly recommended."</p>
+              <cite>— Jennifer L., Corporate Event</cite>
+            </div>
+            <div class="testimonial-mini">
+              <p>"Kevin elevated our event from memorable to truly extraordinary."</p>
+              <cite>— David P., Private Party</cite>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta section">
+      <div class="container">
+        <div class="cta__content">
+          <h2>Ready to experience the impossible?</h2>
+          <p>Create unforgettable moments for your guests with a performance that 
+             defies explanation and sparks conversation long after the event ends.</p>
+          <div class="cta__actions">
+            <router-link to="/contact" class="btn btn-primary">
+              Book Your Event
+            </router-link>
+            <router-link to="/mentalism" class="btn btn-secondary">
+              Learn About Mentalism
+            </router-link>
+          </div>
+          <div class="cta__guarantee">
+            <p>✓ Professional performance guarantee<br/>
+               ✓ Response within 24 hours<br/>
+               ✓ Fully insured and experienced performer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const scrollToExperience = () => {
+  const element = document.getElementById('experience')
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+onMounted(() => {
+  // Hero animations
+  gsap.timeline()
+    .from('.hero__label', { duration: 0.8, y: 30, opacity: 0 })
+    .from('.hero__title', { duration: 1, y: 50, opacity: 0 }, '-=0.3')
+    .from('.hero__description', { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
+    .from('.hero__actions', { duration: 0.8, y: 30, opacity: 0 }, '-=0.3')
+    .from('.hero__visual', { duration: 1, scale: 0.8, opacity: 0 }, '-=1')
+    .from('.hero__venues', { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
+
+  // Floating animation for brain visual
+  gsap.to('.mind-visual', {
+    y: -15,
+    duration: 3,
+    repeat: -1,
+    yoyo: true,
+    ease: 'power2.inOut'
+  })
+
+  // Neural network animation
+  gsap.to('.neuron', {
+    scale: 1.2,
+    opacity: 0.8,
+    duration: 2,
+    repeat: -1,
+    yoyo: true,
+    stagger: 0.2,
+    ease: 'power2.inOut'
+  })
+
+  // Section animations on scroll
+  gsap.from('.experience__card', {
+    scrollTrigger: '.experience',
+    y: 80,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2
+  })
+
+  gsap.from('.performance-card', {
+    scrollTrigger: '.performances',
+    y: 80,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.3
+  })
+
+  gsap.from('.testimonial-main', {
+    scrollTrigger: '.testimonials',
+    y: 50,
+    opacity: 0,
+    duration: 1
+  })
+
+  gsap.from('.testimonial-mini', {
+    scrollTrigger: '.testimonials',
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15
+  })
+})
+</script>
+
+<style lang="scss" scoped>
+// Hero Section
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  
+  &__particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(2px 2px at 20px 30px, rgba(96, 165, 250, 0.3), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(83, 58, 123, 0.3), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(196, 146, 79, 0.3), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(96, 165, 250, 0.2), transparent);
+    background-size: 150px 150px;
+    animation: float 20s linear infinite;
+  }
+}
+
+.hero__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 2rem 0;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+}
+
+.hero__label {
+  display: inline-block;
+  color: var(--text-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 20px;
+  background: rgba(96, 165, 250, 0.1);
+}
+
+.hero__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  
+  .accent {
+    background: linear-gradient(135deg, var(--accent-purple), var(--text-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.hero__description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+// Brain Visual
+.hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mind-visual {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.brain-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.brain-outline {
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--text-accent);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    border: 2px solid var(--accent-purple);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    top: 20%;
+    left: 25%;
+    opacity: 0.8;
+  }
+}
+
+.neural-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.neuron {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--text-accent);
+  border-radius: 50%;
+  opacity: 0.6;
+  
+  &:nth-child(1) { top: 20%; left: 30%; }
+  &:nth-child(2) { top: 25%; left: 60%; }
+  &:nth-child(3) { top: 40%; left: 20%; }
+  &:nth-child(4) { top: 45%; left: 70%; }
+  &:nth-child(5) { top: 60%; left: 35%; }
+  &:nth-child(6) { top: 65%; left: 65%; }
+  &:nth-child(7) { top: 30%; left: 45%; }
+  &:nth-child(8) { top: 50%; left: 50%; }
+  &:nth-child(9) { top: 75%; left: 25%; }
+  &:nth-child(10) { top: 80%; left: 55%; }
+  &:nth-child(11) { top: 35%; left: 75%; }
+  &:nth-child(12) { top: 55%; left: 15%; }
+}
+
+// Venues
+.hero__venues {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.venues__label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.venues__list {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+.venue-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  
+  .venue-logo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-purple), var(--text-accent));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    font-size: 0.8rem;
+  }
+  
+  span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+// Experience Section
+.experience__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.experience__card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(96, 165, 250, 0.3);
+    background: rgba(96, 165, 250, 0.05);
+  }
+  
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+  
+  p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+}
+
+// Performance Types
+.performance-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.performance-card {
+  background: linear-gradient(135deg, rgba(83, 58, 123, 0.1), rgba(96, 165, 250, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  
+  .performance-number {
+    position: absolute;
+    top: -15px;
+    left: 2rem;
+    background: linear-gradient(135deg, var(--accent-purple), var(--text-accent));
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  
+  h3 {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .performance-subtitle {
+    color: var(--text-accent);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .performance-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+      
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--text-accent);
+        font-weight: 700;
+      }
+    }
+  }
+  
+  .performance-specs {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .spec {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      
+      .spec-label {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .spec-value {
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// Testimonials
+.testimonials {
+  background: rgba(255, 255, 255, 0.02);
+  
+  .testimonials__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+}
+
+.testimonial-main {
+  blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    position: relative;
+    
+    &::before {
+      content: '"';
+      font-size: 4rem;
+      color: var(--text-accent);
+      position: absolute;
+      top: -1rem;
+      left: -2rem;
+      opacity: 0.3;
+    }
+  }
+  
+  cite {
+    color: var(--text-secondary);
+    font-style: normal;
+    
+    span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.testimonial-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.testimonial-mini {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--text-accent);
+  padding: 1.5rem;
+  border-radius: 0 10px 10px 0;
+  
+  p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  cite {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: normal;
+  }
+}
+
+// CTA Section
+.cta {
+  text-align: center;
+  
+  .cta__content {
+    max-width: 600px;
+    margin: 0 auto;
+    
+    h2 {
+      margin-bottom: 1.5rem;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+    }
+    
+    p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  .cta__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  .cta__guarantee {
+    background: rgba(96, 165, 250, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    
+    p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.8;
+    }
+  }
+}
+
+// Section Headers
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  .section-label {
+    display: inline-block;
+    color: var(--text-accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    border-radius: 20px;
+    background: rgba(96, 165, 250, 0.1);
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+  }
+  
+  p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+</style>

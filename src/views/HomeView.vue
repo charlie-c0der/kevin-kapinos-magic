@@ -119,29 +119,39 @@ onMounted(async () => {
   })
 
   // Testimonials staggered reveal
-  gsap.from('.testimonial-card', {
-    y: 100,
-    opacity: 0,
-    stagger: 0.2,
-    duration: 1,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.testimonials-grid',
-      start: 'top 75%'
-    }
+  document.querySelectorAll('.testimonial-card').forEach((card, i) => {
+    gsap.fromTo(card,
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        delay: i * 0.15,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 90%',
+        }
+      }
+    )
   })
 
   // Process steps animation
-  gsap.from('.process-step', {
-    x: -80,
-    opacity: 0,
-    stagger: 0.3,
-    duration: 1,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.process-steps',
-      start: 'top 70%'
-    }
+  document.querySelectorAll('.process-step').forEach((step, i) => {
+    gsap.fromTo(step,
+      { x: -40, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        delay: i * 0.15,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: step,
+          start: 'top 90%',
+        }
+      }
+    )
   })
 
   // Floating effects for various elements

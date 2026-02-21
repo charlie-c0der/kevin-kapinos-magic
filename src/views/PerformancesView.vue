@@ -209,24 +209,22 @@ const toggleFAQ = (index: number) => {
 
 onMounted(() => {
   gsap.timeline()
-    .from('.section-label', { duration: 0.8, y: 30, opacity: 0 })
-    .from('.performances-hero h1', { duration: 1, y: 50, opacity: 0 }, '-=0.3')
-    .from('.hero-description', { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
+    .fromTo('.performances-hero .section-label', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 })
+    .fromTo('.performances-hero h1', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.3')
+    .fromTo('.performances-hero .hero-description', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.4')
 
-  gsap.from('.format-card', {
-    scrollTrigger: { trigger: '.performance-types', start: 'top 80%' },
-    y: 60,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2
+  document.querySelectorAll('.format-card').forEach((el, i) => {
+    gsap.fromTo(el, { y: 40, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.7, delay: i * 0.15,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    })
   })
 
-  gsap.from('.faq-item', {
-    scrollTrigger: { trigger: '.faq', start: 'top 80%' },
-    y: 30,
-    opacity: 0,
-    duration: 0.5,
-    stagger: 0.1
+  document.querySelectorAll('.faq-item').forEach((el, i) => {
+    gsap.fromTo(el, { y: 20, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.5, delay: i * 0.08,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    })
   })
 })
 </script>

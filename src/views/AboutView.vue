@@ -193,42 +193,40 @@ gsap.registerPlugin(ScrollTrigger)
 useTilt('.tilt-card', 6)
 
 onMounted(() => {
-  gsap.timeline()
-    .from('.section-label', { duration: 0.8, y: 30, opacity: 0 })
-    .from('.about-hero h1', { duration: 1, y: 50, opacity: 0 }, '-=0.3')
-    .from('.hero-description', { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
-    .from('.portrait-container', { duration: 1, scale: 0.9, opacity: 0 }, '-=0.8')
+  // Hero timeline - immediate, no scroll trigger
+  const heroTl = gsap.timeline()
+  heroTl
+    .fromTo('.about-hero .section-label', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 })
+    .fromTo('.about-hero h1', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.3')
+    .fromTo('.hero-description', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.4')
+    .fromTo('.portrait-container', { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8 }, '-=0.6')
 
-  gsap.from('.story-content p', {
-    scrollTrigger: { trigger: '.origin', start: 'top 80%' },
-    y: 40,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2
+  document.querySelectorAll('.story-content p').forEach((el, i) => {
+    gsap.fromTo(el, { y: 30, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.7, delay: i * 0.15,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    })
   })
 
-  gsap.from('.venue-card', {
-    scrollTrigger: { trigger: '.credentials', start: 'top 80%' },
-    y: 60,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15
+  document.querySelectorAll('.venue-card').forEach((el, i) => {
+    gsap.fromTo(el, { y: 40, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.7, delay: i * 0.1,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    })
   })
 
-  gsap.from('.award-item', {
-    scrollTrigger: { trigger: '.awards', start: 'top 85%' },
-    x: -30,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1
+  document.querySelectorAll('.award-item').forEach((el, i) => {
+    gsap.fromTo(el, { x: -20, opacity: 0 }, {
+      x: 0, opacity: 1, duration: 0.5, delay: i * 0.08,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    })
   })
 
-  gsap.from('.gallery-item', {
-    scrollTrigger: { trigger: '.gallery', start: 'top 80%' },
-    y: 80,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2
+  document.querySelectorAll('.gallery-item').forEach((el, i) => {
+    gsap.fromTo(el, { y: 40, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.7, delay: i * 0.15,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    })
   })
 })
 </script>

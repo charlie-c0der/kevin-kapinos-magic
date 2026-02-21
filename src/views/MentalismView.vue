@@ -88,23 +88,20 @@ gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   gsap.timeline()
-    .from('.section-label', { duration: 0.8, y: 30, opacity: 0 })
-    .from('.mentalism-hero h1', { duration: 1, y: 50, opacity: 0 }, '-=0.3')
-    .from('.hero-description', { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
+    .fromTo('.mentalism-hero .section-label', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 })
+    .fromTo('.mentalism-hero h1', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.3')
+    .fromTo('.hero-description', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.4')
 
-  gsap.from('.experience-card', {
-    scrollTrigger: { trigger: '.experience', start: 'top 80%' },
-    y: 60,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2
+  document.querySelectorAll('.experience-card').forEach((el, i) => {
+    gsap.fromTo(el, { y: 40, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.7, delay: i * 0.15,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    })
   })
 
-  gsap.from('.difference-content', {
-    scrollTrigger: { trigger: '.difference', start: 'top 80%' },
-    y: 40,
-    opacity: 0,
-    duration: 0.8
+  gsap.fromTo('.difference-content', { y: 30, opacity: 0 }, {
+    y: 0, opacity: 1, duration: 0.8,
+    scrollTrigger: { trigger: '.difference', start: 'top 85%' }
   })
 })
 </script>

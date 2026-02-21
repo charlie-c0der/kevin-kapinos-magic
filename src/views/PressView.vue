@@ -95,16 +95,15 @@ gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   gsap.timeline()
-    .from('.section-label', { duration: 0.8, y: 30, opacity: 0 })
-    .from('.testimonials-hero h1', { duration: 1, y: 50, opacity: 0 }, '-=0.3')
-    .from('.hero-description', { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
+    .fromTo('.testimonials-hero .section-label', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 })
+    .fromTo('.testimonials-hero h1', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.3')
+    .fromTo('.testimonials-hero .hero-description', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.4')
 
-  gsap.from('.testimonial-card', {
-    scrollTrigger: { trigger: '.testimonials-content', start: 'top 80%' },
-    y: 40,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2
+  document.querySelectorAll('.testimonial-card').forEach((el, i) => {
+    gsap.fromTo(el, { y: 30, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.7, delay: i * 0.15,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    })
   })
 })
 </script>

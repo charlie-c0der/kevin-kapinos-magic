@@ -93,18 +93,18 @@ onMounted(() => {
     .from('.hero-description', { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
 
   gsap.from('.experience-card', {
-    scrollTrigger: '.experience',
-    y: 80,
+    scrollTrigger: { trigger: '.experience', start: 'top 80%' },
+    y: 60,
     opacity: 0,
     duration: 0.8,
     stagger: 0.2
   })
 
   gsap.from('.difference-content', {
-    scrollTrigger: '.difference',
-    y: 60,
+    scrollTrigger: { trigger: '.difference', start: 'top 80%' },
+    y: 40,
     opacity: 0,
-    duration: 1
+    duration: 0.8
   })
 })
 </script>

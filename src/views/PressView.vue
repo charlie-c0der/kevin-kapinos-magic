@@ -100,8 +100,8 @@ onMounted(() => {
     .from('.hero-description', { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
 
   gsap.from('.testimonial-card', {
-    scrollTrigger: '.testimonials-content',
-    y: 60,
+    scrollTrigger: { trigger: '.testimonials-content', start: 'top 80%' },
+    y: 40,
     opacity: 0,
     duration: 0.8,
     stagger: 0.2

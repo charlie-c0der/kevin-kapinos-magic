@@ -348,33 +348,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // ── Reveals ──
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
+// GSAP handles all reveal animations via useReveal() composable.
+// Do NOT set opacity:0 here - it conflicts with GSAP's from() animations.
 
 // ── Split Text ──
+// GSAP handles animation. Only layout styles here.
 .split-text { display: inline; }
-.split-word { display: inline-flex; overflow: hidden; }
-.split-char {
-  display: inline-block;
-  transform: translateY(110%);
-  opacity: 0;
-  transition: transform 0.7s var(--ease-out), opacity 0.7s var(--ease-out);
-}
-.split-visible .split-char {
-  transform: translateY(0);
-  opacity: 1;
-}
+.split-word, .word { display: inline-flex; overflow: hidden; }
+.split-char, .char { display: inline-block; }
 
 // ── Glow pulse ──
 .glow-pulse {

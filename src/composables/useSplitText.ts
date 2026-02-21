@@ -5,9 +5,9 @@ export function useSplitText() {
   function splitTextContent(element: HTMLElement) {
     const text = element.textContent || ''
     const words = text.split(' ')
-    
+
     element.innerHTML = words
-      .map(word => `<span class="word">${word.split('').map(char => 
+      .map(word => `<span class="word">${word.split('').map(char =>
         char === ' ' ? '<span class="char"> </span>' : `<span class="char">${char}</span>`
       ).join('')}</span>`)
       .join('<span class="char"> </span>')
@@ -15,19 +15,14 @@ export function useSplitText() {
 
   function animateChars(element: HTMLElement, delay: number = 0) {
     const chars = element.querySelectorAll('.char')
-    
-    gsap.fromTo(chars, 
-      {
-        y: 100,
-        opacity: 0,
-        rotationX: -90
-      },
+
+    gsap.fromTo(chars,
+      { y: 80, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        rotationX: 0,
-        duration: 0.8,
-        ease: 'back.out(1.7)',
+        duration: 0.6,
+        ease: 'power3.out',
         stagger: 0.02,
         delay
       }
@@ -36,17 +31,16 @@ export function useSplitText() {
 
   onMounted(async () => {
     await nextTick()
-    
-    // Find all elements with data-split attribute
+
     const splitElements = document.querySelectorAll('[data-split]')
-    
+
     splitElements.forEach((element: Element) => {
       const htmlElement = element as HTMLElement
       const delay = parseFloat(htmlElement.getAttribute('data-split-delay') || '0')
-      
+
       splitTextContent(htmlElement)
-      
-      // Set up intersection observer for animation
+
+      // Use IntersectionObserver but also handle already-visible elements
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach(entry => {
@@ -58,7 +52,7 @@ export function useSplitText() {
         },
         { threshold: 0.1 }
       )
-      
+
       observer.observe(htmlElement)
     })
   })

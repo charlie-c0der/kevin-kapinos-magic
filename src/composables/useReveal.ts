@@ -7,101 +7,72 @@ gsap.registerPlugin(ScrollTrigger)
 export function useReveal() {
   onMounted(async () => {
     await nextTick()
-    
-    // Setup reveal animations for elements with .reveal class
-    gsap.from('.reveal', {
-      y: 60,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-      stagger: {
-        amount: 0.6,
-        from: 'start'
-      },
-      scrollTrigger: {
-        trigger: '.reveal',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
-      }
+
+    // Each .reveal element gets its OWN ScrollTrigger
+    document.querySelectorAll('.reveal').forEach((el) => {
+      const delay = el.classList.contains('reveal-delay-1') ? 0.1
+        : el.classList.contains('reveal-delay-2') ? 0.2
+        : el.classList.contains('reveal-delay-3') ? 0.3
+        : el.classList.contains('reveal-delay-4') ? 0.4
+        : 0
+
+      gsap.from(el, {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        delay,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      })
     })
 
-    // Advanced reveal with delays
-    gsap.from('.reveal-delay-1', {
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      delay: 0.2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.reveal-delay-1',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
+    // Each .reveal-scale element gets its own trigger
+    document.querySelectorAll('.reveal-scale').forEach((el) => {
+      gsap.from(el, {
+        scale: 0.85,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'back.out(1.4)',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      })
     })
 
-    gsap.from('.reveal-delay-2', {
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      delay: 0.4,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.reveal-delay-2',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
+    // Slide from left
+    document.querySelectorAll('.reveal-left').forEach((el) => {
+      gsap.from(el, {
+        x: -60,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      })
     })
 
-    gsap.from('.reveal-delay-3', {
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      delay: 0.6,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.reveal-delay-3',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
-    })
-
-    // Slide in from left
-    gsap.from('.reveal-left', {
-      x: -80,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '.reveal-left',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
-    })
-
-    // Slide in from right
-    gsap.from('.reveal-right', {
-      x: 80,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '.reveal-right',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
-    })
-
-    // Scale reveal
-    gsap.from('.reveal-scale', {
-      scale: 0.8,
-      opacity: 0,
-      duration: 1,
-      ease: 'back.out(1.7)',
-      scrollTrigger: {
-        trigger: '.reveal-scale',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
+    // Slide from right
+    document.querySelectorAll('.reveal-right').forEach((el) => {
+      gsap.from(el, {
+        x: 60,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      })
     })
   })
 }

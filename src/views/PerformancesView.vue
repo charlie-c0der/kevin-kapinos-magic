@@ -214,18 +214,18 @@ onMounted(() => {
     .from('.hero-description', { duration: 0.8, y: 30, opacity: 0 }, '-=0.5')
 
   gsap.from('.format-card', {
-    scrollTrigger: '.performance-types',
-    y: 100,
+    scrollTrigger: { trigger: '.performance-types', start: 'top 80%' },
+    y: 60,
     opacity: 0,
-    duration: 1,
-    stagger: 0.3
+    duration: 0.8,
+    stagger: 0.2
   })
 
   gsap.from('.faq-item', {
-    scrollTrigger: '.faq',
-    y: 40,
+    scrollTrigger: { trigger: '.faq', start: 'top 80%' },
+    y: 30,
     opacity: 0,
-    duration: 0.6,
+    duration: 0.5,
     stagger: 0.1
   })
 })

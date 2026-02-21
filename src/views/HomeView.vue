@@ -27,10 +27,10 @@ const venues = [
 ]
 
 const stats = [
-  { number: '15+', label: 'Years Performing' },
-  { number: '✦', label: 'Chicago Magic Lounge Resident' },
-  { number: '✦', label: 'Magic Castle Performer' },
-  { number: '✦', label: 'Award-Winning Close-Up Magic' }
+  { number: '15+', label: 'Years Performing', isNumeric: false },
+  { number: 'CML', label: 'Resident Performer', isNumeric: false },
+  { number: '✦', label: 'Magic Castle', isNumeric: false },
+  { number: '✦', label: 'Award-Winning', isNumeric: false }
 ]
 
 const testimonials = [
@@ -105,16 +105,16 @@ onMounted(async () => {
     ease: 'none'
   })
 
-  // Stats counter animation
-  gsap.from('.stat__number', {
-    textContent: '0',
-    duration: 2,
+  // Stats fade-in
+  gsap.from('.stat', {
+    y: 20,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.15,
     ease: 'power2.out',
-    snap: { textContent: 1 },
-    stagger: 0.2,
     scrollTrigger: {
       trigger: '.stats-bar',
-      start: 'top 80%'
+      start: 'top 85%'
     }
   })
 

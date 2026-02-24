@@ -101,7 +101,7 @@ onUnmounted(() => {
 
   <div :class="['site-wrapper', { ready: siteReady }]">
     <NavBar />
-    <main>
+    <main id="main-content">
       <router-view v-slot="{ Component, route }">
         <transition :name="(route.meta.transition as string) || 'mind'" mode="out-in">
           <component :is="Component" :key="route.path" />
@@ -138,7 +138,7 @@ body { cursor: none; }
 @media (max-width: 768px) { body { cursor: auto; } }
 
 :root {
-  // Kevin's mysterious color palette
+  // Kevin's mysterious color palette - dark theme (default)
   --primary-dark: #0a0b15;
   --secondary-dark: #1a1b2e;
   --accent-blue: #16213e;
@@ -164,6 +164,33 @@ body { cursor: none; }
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-pill: 100px;
+}
+
+// Light theme variables
+.light-theme {
+  --primary-dark: #ffffff;
+  --secondary-dark: #f8fafc;
+  --accent-blue: #e2e8f0;
+  --accent-purple: #7c3aed;
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-accent: #3b82f6;
+}
+
+.dark-theme {
+  // Explicitly set dark theme (same as default)
+  --primary-dark: #0a0b15;
+  --secondary-dark: #1a1b2e;
+  --accent-blue: #16213e;
+  --accent-purple: #533a7b;
+  --accent-violet: #8b5cf6;
+  --accent-silver: #9ca3af;
+  --accent-gold: #c4924f;
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-accent: #60a5fa;
 }
 
 *, *::before, *::after {
@@ -364,6 +391,35 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes glowPulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0); }
   50% { box-shadow: 0 0 24px 4px rgba(96, 165, 250, 0.15); }
+}
+
+// ── Focus Indicators ──
+*:focus {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+// Remove default focus for elements that have custom focus styles
+.btn:focus,
+.navbar__link:focus,
+.custom-cursor:focus {
+  outline: none;
+}
+
+// Custom focus styles for interactive elements
+.btn:focus {
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.4);
+}
+
+.navbar__link:focus {
+  background: rgba(96, 165, 250, 0.2);
+  border-radius: 4px;
 }
 
 // ── Buttons ──

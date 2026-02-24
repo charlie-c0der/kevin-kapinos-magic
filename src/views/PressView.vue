@@ -90,6 +90,13 @@
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useSEO } from '../composables/useSEO'
+
+useSEO({
+  title: 'Client Testimonials | Reviews for Kevin Kapinos Magic Shows',
+  description: 'Read what event planners and guests say about Kevin Kapinos\' close-up magic and mentalism performances. Real reviews from satisfied clients.',
+  path: '/testimonials'
+})
 
 gsap.registerPlugin(ScrollTrigger)
 

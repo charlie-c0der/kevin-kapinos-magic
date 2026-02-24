@@ -83,6 +83,13 @@
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useSEO } from '../composables/useSEO'
+
+useSEO({
+  title: 'What is Mentalism? | Mind Reading & Psychological Entertainment',
+  description: 'Explore the art of mentalism - thought reading, predictions, and psychological demonstrations that create impossible moments. Chicago mentalist Kevin Kapinos.',
+  path: '/mentalism'
+})
 
 gsap.registerPlugin(ScrollTrigger)
 

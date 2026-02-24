@@ -175,6 +175,13 @@
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useSEO } from '../composables/useSEO'
+
+useSEO({
+  title: 'Performance Types | Corporate & Wedding Magic Shows - Kevin Kapinos',
+  description: 'Professional magic entertainment formats: walk-around magic, close-up shows, and corporate events. Customized performances for your specific audience.',
+  path: '/performances'
+})
 
 gsap.registerPlugin(ScrollTrigger)
 

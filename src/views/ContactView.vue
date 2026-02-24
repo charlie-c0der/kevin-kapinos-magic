@@ -212,6 +212,12 @@
                 <span>Chicago, Illinois</span>
               </div>
             </div>
+            
+            <div class="calendar-note">
+              <p><strong>Quick Consultation:</strong> After initial contact, 
+                 I'll send you a calendar link to schedule a brief call to discuss 
+                 your event details and vision.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -223,6 +229,13 @@
 import { ref, reactive, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useSEO } from '../composables/useSEO'
+
+useSEO({
+  title: 'Contact Kevin Kapinos | Book Magic Show for Your Event',
+  description: 'Contact Chicago magician Kevin Kapinos to book close-up magic and mentalism for your wedding, corporate event, or private celebration. Free consultation.',
+  path: '/contact'
+})
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -521,6 +534,23 @@ onMounted(() => {
   .method-label { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.2rem; }
   a { color: var(--text-accent); &:hover { text-decoration: underline; } }
   span:not(.method-label) { color: var(--text-secondary); }
+}
+
+.calendar-note {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  
+  p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    
+    strong {
+      color: var(--text-primary);
+    }
+  }
 }
 
 .section-label {

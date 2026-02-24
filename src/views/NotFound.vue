@@ -45,6 +45,13 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
+import { useSEO } from '../composables/useSEO'
+
+useSEO({
+  title: 'Page Not Found | Kevin Kapinos Magic',
+  description: 'This page seems to have vanished like a magic trick. Return to Kevin Kapinos\' homepage to explore close-up magic and mentalism services.',
+  path: '/404'
+})
 
 onMounted(() => {
   // Animate floating cards

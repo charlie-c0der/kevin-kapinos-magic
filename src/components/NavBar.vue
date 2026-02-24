@@ -1,4 +1,5 @@
 <template>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
   <nav class="navbar" :class="{ 'navbar--scrolled': isScrolled }">
     <div class="container">
       <div class="navbar__content">
@@ -17,6 +18,7 @@
         </div>
         
         <div class="navbar__cta">
+          <ThemeToggle />
           <router-link to="/contact" class="btn btn-primary navbar__book-btn">
             Book Performance
           </router-link>
@@ -40,6 +42,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import ThemeToggle from './ThemeToggle.vue'
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
@@ -67,6 +70,24 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
+.skip-nav {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent-purple);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  z-index: 10000;
+  transition: top 0.3s;
+  
+  &:focus {
+    top: 6px;
+  }
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -188,6 +209,10 @@ onUnmounted(() => {
 }
 
 .navbar__cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
   @media (max-width: 768px) {
     display: none;
   }

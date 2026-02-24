@@ -188,6 +188,13 @@ import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useTilt } from '../composables/useTilt'
+import { useSEO } from '../composables/useSEO'
+
+useSEO({
+  title: 'About Kevin Kapinos | Chicago Magic Lounge Resident Magician',
+  description: 'Learn about Kevin Kapinos, Chicago-based magician with 15+ years experience. Resident performer at Chicago Magic Lounge and The Magic Castle.',
+  path: '/about'
+})
 
 gsap.registerPlugin(ScrollTrigger)
 useTilt('.tilt-card', 6)

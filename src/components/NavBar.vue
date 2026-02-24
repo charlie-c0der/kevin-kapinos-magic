@@ -18,7 +18,6 @@
         </div>
         
         <div class="navbar__cta">
-          <ThemeToggle />
           <router-link to="/contact" class="btn btn-primary navbar__book-btn">
             Book Performance
           </router-link>
@@ -42,7 +41,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import ThemeToggle from './ThemeToggle.vue'
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
@@ -209,10 +207,6 @@ onUnmounted(() => {
 }
 
 .navbar__cta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  
   @media (max-width: 768px) {
     display: none;
   }

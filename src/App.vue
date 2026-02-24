@@ -138,7 +138,7 @@ body { cursor: none; }
 @media (max-width: 768px) { body { cursor: auto; } }
 
 :root {
-  // Kevin's mysterious color palette - dark theme (default)
+  // Kevin's mysterious color palette
   --primary-dark: #0a0b15;
   --secondary-dark: #1a1b2e;
   --accent-blue: #16213e;
@@ -164,33 +164,6 @@ body { cursor: none; }
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-pill: 100px;
-}
-
-// Light theme variables
-.light-theme {
-  --primary-dark: #ffffff;
-  --secondary-dark: #f8fafc;
-  --accent-blue: #e2e8f0;
-  --accent-purple: #7c3aed;
-  --text-primary: #1f2937;
-  --text-secondary: #374151;
-  --text-muted: #6b7280;
-  --text-accent: #3b82f6;
-}
-
-.dark-theme {
-  // Explicitly set dark theme (same as default)
-  --primary-dark: #0a0b15;
-  --secondary-dark: #1a1b2e;
-  --accent-blue: #16213e;
-  --accent-purple: #533a7b;
-  --accent-violet: #8b5cf6;
-  --accent-silver: #9ca3af;
-  --accent-gold: #c4924f;
-  --text-primary: #ffffff;
-  --text-secondary: #e5e7eb;
-  --text-muted: #9ca3af;
-  --text-accent: #60a5fa;
 }
 
 *, *::before, *::after {

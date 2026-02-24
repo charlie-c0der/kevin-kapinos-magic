@@ -39,6 +39,15 @@
               <li><span style="color: var(--text-muted)">Chicago, Illinois</span></li>
               <li><span style="color: var(--text-muted)">Available Nationwide</span></li>
             </ul>
+            
+            <div class="social-links">
+              <h4 style="margin-top: 1.5rem;">Follow</h4>
+              <ul>
+                <li><a href="https://www.instagram.com/kevinkapinos" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@kevinkapinos" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="https://www.facebook.com/kevinkapinosmagic" target="_blank" rel="noopener">Facebook</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         

@@ -8,9 +8,9 @@ export function useSplitText() {
 
     element.innerHTML = words
       .map(word => `<span class="word">${word.split('').map(char =>
-        char === ' ' ? '<span class="char"> </span>' : `<span class="char">${char}</span>`
+        `<span class="char">${char}</span>`
       ).join('')}</span>`)
-      .join('<span class="char"> </span>')
+      .join('<span class="char space"> </span>')
   }
 
   function animateChars(element: HTMLElement, delay: number = 0) {

@@ -264,6 +264,13 @@ const scrollToExperience = () => {
             <em class="shimmer">inches from your eyes.</em>
           </h2>
           <div class="section-divider reveal reveal-delay-2" />
+          <div class="experience-hero-image reveal reveal-delay-2">
+            <img 
+              src="/images/performing-closeup.webp" 
+              alt="Kevin Kapinos performing close-up magic with cards inches from audience members"
+              class="experience-image"
+            />
+          </div>
           <p class="section-description reveal reveal-delay-2">
             Forget stage shows with smoke and mirrors. This is interactive, close-up magic 
             that happens right in your hands - inches away from your eyes. Card tricks, 
@@ -680,6 +687,25 @@ const scrollToExperience = () => {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+  }
+}
+
+// ━━━ EXPERIENCE HERO IMAGE ━━━
+.experience-hero-image {
+  margin: 2rem 0;
+  text-align: center;
+  
+  .experience-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s var(--ease-out);
+    
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
 

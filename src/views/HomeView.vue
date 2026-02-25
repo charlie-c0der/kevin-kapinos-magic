@@ -258,7 +258,7 @@ const handleNewsletterSubmit = async () => {
 
       <div class="hero__content container" :class="{ loaded: heroLoaded }">
         <p class="hero__eyebrow" data-split data-split-delay="0.3">
-          Chicago Magician &amp; Sleight of Hand Expert
+          Chicago Magician & Sleight of Hand Expert
         </p>
         <h1 class="hero__title" data-split data-split-delay="0.6">
           Close-up magic that creates <span class="shimmer">impossible moments.</span>

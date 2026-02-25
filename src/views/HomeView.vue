@@ -261,8 +261,7 @@ const handleNewsletterSubmit = async () => {
           Chicago Magician &amp; Sleight of Hand Expert
         </p>
         <h1 class="hero__title" data-split data-split-delay="0.6">
-          Close-up magic that creates<br>
-          <span class="shimmer">impossible moments.</span>
+          Close-up magic that creates <span class="shimmer">impossible moments.</span>
         </h1>
         <div class="hero__divider" />
         <p class="hero__subtitle reveal-delay-1">

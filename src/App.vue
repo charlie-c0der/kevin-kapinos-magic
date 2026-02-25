@@ -354,8 +354,9 @@ h1, h2, h3, h4, h5, h6 {
 // ── Split Text ──
 // GSAP handles animation. Only layout styles here.
 .split-text { display: inline; }
-.split-word, .word { display: inline-flex; overflow: hidden; }
+.split-word, .word { display: inline-block; overflow: hidden; white-space: nowrap; }
 .split-char, .char { display: inline-block; }
+.char.space { width: 0.25em; }
 
 // ── Glow pulse ──
 .glow-pulse {

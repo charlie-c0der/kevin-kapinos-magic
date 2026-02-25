@@ -260,7 +260,7 @@ const handleNewsletterSubmit = async () => {
         <p class="hero__eyebrow" data-split data-split-delay="0.3">
           Chicago Magician & Sleight of Hand Expert
         </p>
-        <h1 class="hero__title" data-split data-split-delay="0.6">
+        <h1 class="hero__title reveal reveal-delay-2">
           Close-up magic that creates <span class="shimmer">impossible moments.</span>
         </h1>
         <div class="hero__divider" />

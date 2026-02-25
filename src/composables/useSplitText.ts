@@ -4,13 +4,19 @@ import gsap from 'gsap'
 export function useSplitText() {
   function splitTextContent(element: HTMLElement) {
     const text = element.textContent || ''
-    const words = text.split(' ')
+    
+    // Skip splitting if the element has nested HTML (like spans with classes)
+    if (element.innerHTML !== element.textContent) {
+      return // Don't split elements with nested HTML
+    }
+    
+    const words = text.trim().split(' ').filter(word => word.length > 0)
 
     element.innerHTML = words
       .map(word => `<span class="word">${word.split('').map(char =>
         `<span class="char">${char}</span>`
       ).join('')}</span>`)
-      .join('<span class="char space"> </span>')
+      .join('<span class="char space">&nbsp;</span>')
   }
 
   function animateChars(element: HTMLElement, delay: number = 0) {

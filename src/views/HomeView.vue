@@ -795,7 +795,7 @@ const handleNewsletterSubmit = async () => {
   color: #60a5fa;
   font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 3px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 2rem;
   padding: 0.8rem 1.5rem;
@@ -1137,7 +1137,7 @@ const handleNewsletterSubmit = async () => {
   color: #60a5fa;
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
